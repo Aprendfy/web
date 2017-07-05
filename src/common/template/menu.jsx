@@ -8,7 +8,7 @@ export default props => (
     <MenuItem path='#/' label='Dashboard' icon='dashboard' />
 
     <MenuTree label='Posts' icon='calendar-check-o' >
-      <MenuItem path='#createPost' label='Novo Post' icon='plus' />
+      <MenuItem path='#posts' label='Novo Post' icon='plus' />
     </MenuTree>
 
     <MenuTree label='Categorias' icon='tags' >
