@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import ContentHeader from '../common/template/contentHeader'
 import Content from '../common/template/content'
 import InfoBox from '../common/widget/infoBox'
+import Row from '../common/layout/row'
 
 class Dashboard extends Component {
   render() {
@@ -10,7 +11,9 @@ class Dashboard extends Component {
       <div>
         <ContentHeader title='Dashboard' small='semi título' />
         <Content>
-          <InfoBox cols='12 4' color='green' icon='bank' value='300' text='Posts Publicados' />
+          <Row>
+            <InfoBox cols='12 4' color='green' icon='bank' value='300' text='Posts Publicados' />
+          </Row>
         </Content>
       </div>
     )
