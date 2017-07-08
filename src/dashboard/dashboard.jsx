@@ -8,9 +8,9 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
-        <ContentHeader title='Dashboar' small='semi título' />
+        <ContentHeader title='Dashboard' small='semi título' />
         <Content>
-
+          <InfoBox cols='12 4' color='green' icon='bank' value='300' text='Posts Publicados' />
         </Content>
       </div>
     )
