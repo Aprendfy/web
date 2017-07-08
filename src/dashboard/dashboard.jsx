@@ -7,7 +7,14 @@ import Content from '../common/template/content'
 import InfoBox from '../common/widget/infoBox'
 import Row from '../common/layout/row'
 
+import { getSummary } from './dashboardActions' 
+
 class Dashboard extends Component {
+  
+  componentWillMount() {
+     this.props.getSummary();
+  }
+
   render() {
     const { credit, debt } = this.props.summary
     return (
@@ -28,4 +35,10 @@ const mapStateToProps = state => ({
   summary: state.dashboard.summary
 })
 
-export default connect(mapStateToProps)(Dashboard)
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getSummary: () => dispatch(getSummary())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard)
