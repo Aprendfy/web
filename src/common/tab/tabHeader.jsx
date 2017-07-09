@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
 
 import If from '../operator/if'
 import { selectTab } from './tabActions'
@@ -25,7 +24,7 @@ class TabHeader extends Component {
 const mapStateToProps = state => ({tab : state.tab})
 const mapDispatchToProps = (dispatch) => {
   return {
-    selectTab
+    selectTab: (tabId) => dispatch(selectTab(tabId))
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(TabHeader)
