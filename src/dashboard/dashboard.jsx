@@ -37,7 +37,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getSummary: () => dispatch(getSummary())
+    getSummary
   }
 }
 
