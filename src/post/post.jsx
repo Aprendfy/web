@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import { connect } from 'react-redux'
+
 import ContentHeader from '../common/template/contentHeader'
 import Content from '../common/template/content'
 import Tabs from '../common/tab/tabs'
@@ -8,7 +10,14 @@ import TabsContent from '../common/tab/tabscontent'
 import TabHeader from '../common/tab/tabheader'
 import TabContent from '../common/tab/tabcontent'
 
+import { selectTab, showTabs } from '../common/tab/tabActions'
+
 class Post extends Component {
+  componentWillMount() {
+    this.props.selectTab('tabList')
+    this.props.showTabs('tablist', 'tabCreate')
+  }
+  
   render() {
     return(
       <div>
@@ -34,4 +43,11 @@ class Post extends Component {
   }
 }
 
-export default Post
+const mapStateToProps = state => ({tab : state.tab})
+const mapDispatchToProps = (dispatch) => {
+  return {
+    selectTab: (tabId) => dispatch(selectTab(tabId)),
+    showTabs: (tabId) => dispatch(showTabs(tabId))
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Post)
